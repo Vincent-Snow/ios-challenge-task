@@ -13,7 +13,7 @@ class TaskListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.reloadData()
+        
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -36,7 +36,7 @@ class TaskListTableViewController: UITableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("taskCell", forIndexPath: indexPath)
 
         let task = TaskController.sharedController.tasks[indexPath.row]
         
@@ -81,14 +81,23 @@ class TaskListTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "toNewTask" {
+            let destinationViewController = segue.destinationViewController as? NewTaskTableViewController {
+                
+                
+                
+                
+                
+                
+                
+            }
+        }
     }
-    */
+    
 
 }

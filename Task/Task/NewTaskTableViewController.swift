@@ -31,6 +31,14 @@ class NewTaskTableViewController: UITableViewController {
             let newTask = Task(name: self.nameTextField.text ?? "", dueDate: self.dueTextField.text ?? "" , notes: self.notesTextView.text ?? "")
             TaskController.sharedController.addTask(newTask)
         }
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    func updateWithTask(task: Task) {
+        self.task = task
+        self.nameTextField.text = task.name
+        self.dueTextField.text = task.dueDate
+        self.notesTextView.text = task.notes
     }
 }
 
