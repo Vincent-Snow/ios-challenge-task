@@ -9,11 +9,29 @@
 import UIKit
 
 class NewTaskTableViewController: UITableViewController {
-
+    
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var dueTextField: UITextField!
+    @IBOutlet weak var notesTextView: UITextView!
+    
+    var task: Task?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
+        
+        
     }
-
+    
+    @IBAction func saveButtonTapped(sender: AnyObject) {
+        if let task = task {
+            task.name = nameTextField.text ?? ""
+            task.dueDate = dueTextField.text ?? ""
+            task.notes = notesTextView.text
+        } else {
+            let newTask = Task(name: self.nameTextField.text ?? "", dueDate: self.dueTextField.text ?? "" , notes: self.notesTextView.text ?? "")
+            TaskController.sharedController.addTask(newTask)
+        }
+    }
 }
+
+

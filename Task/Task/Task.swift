@@ -8,14 +8,14 @@
 
 import Foundation
 
-class Task {
+class Task: NSObject {
     
     var name: String
-    var dueDate: NSDate
-    var isComplete: Bool
+    var dueDate: String
+    var isComplete: Bool?
     var notes: String
     
-    init(name: String, dueDate: NSDate = NSDate(), isComplete: Bool, notes: String) {
+    init(name: String, dueDate: String, isComplete: Bool? = nil, notes: String) {
         self.name = name
         self.dueDate = dueDate
         self.isComplete = isComplete
@@ -24,4 +24,8 @@ class Task {
     }
     
     
+}
+
+func ==(lhs:Task, rhs: Task) -> Bool {
+    return ObjectIdentifier(lhs) == ObjectIdentifier(rhs)
 }

@@ -49,7 +49,7 @@
             </objects>
             <point key="canvasLocation" x="1115" y="382"/>
         </scene>
-        <!--New Task Table View Controller-->
+        <!--Title-->
         <scene sceneID="TNp-gj-3A2">
             <objects>
                 <tableViewController id="6KV-rN-07j" customClass="NewTaskTableViewController" customModule="Task" customModuleProvider="target" sceneMemberID="viewController">
@@ -140,6 +140,20 @@
                             <outlet property="delegate" destination="6KV-rN-07j" id="Lmf-2p-vfM"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="6nn-R1-Lil">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="eC0-3x-Ofn">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="6KV-rN-07j" id="WHv-sg-QEE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="dueTextField" destination="3yw-2a-Q7t" id="kRF-To-HJl"/>
+                        <outlet property="nameTextField" destination="xmX-Cz-wNc" id="obr-TQ-oT5"/>
+                        <outlet property="notesTextView" destination="WFX-Sc-yMm" id="aZp-fX-8Pf"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UGF-IB-bep" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
