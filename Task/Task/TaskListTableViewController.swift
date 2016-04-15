@@ -46,13 +46,10 @@ class TaskListTableViewController: UITableViewController {
     }
     
 
-    /*
-    // Override to support conditional editing of the table view.
+    // Override to support editing the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
 
     /*
     // Override to support editing the table view.
@@ -87,8 +84,15 @@ class TaskListTableViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toNewTask" {
-            let destinationViewController = segue.destinationViewController as? NewTaskTableViewController {
+            if let destinationViewController = segue.destinationViewController as? NewTaskTableViewController {
                 
+                _ = destinationViewController.view
+                
+                let indexPath = tableView.indexPathForSelectedRow
+                if let selectedRow = indexPath?.row {
+                    let task = TaskController.sharedController.tasks[selectedRow]
+                    destinationViewController.updateWithTask(task)
+                }
                 
                 
                 

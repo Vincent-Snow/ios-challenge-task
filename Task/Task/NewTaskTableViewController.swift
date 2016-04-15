@@ -19,7 +19,7 @@ class NewTaskTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        tableView.reloadData()
     }
     
     @IBAction func saveButtonTapped(sender: AnyObject) {
